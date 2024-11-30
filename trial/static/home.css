@@ -1,0 +1,304 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+    background-color: #2C3639;
+    color: #CAE5D7;
+    position: relative;
+}
+
+.center-text {
+    font-size: 3rem;
+    font-weight: bold;
+    position: absolute;
+    top: 25%;
+    text-align: center;
+    width: 100%;
+}
+
+/* Logo styling */
+.logo img {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+}
+
+/* Navigation links */
+.nav-links {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    
+}
+
+.nav-links a {
+    color: #333;
+    font-size: 1rem;
+    margin: 0 10px;
+    text-decoration: none;
+    padding: 5px;
+    color: #CAE5D7;
+}
+
+.nav-links a:hover {
+    color: #007bff;
+}
+
+/* Main section background image */
+.main {
+    background-image: url("\static\images\set.jpg"); /* Corrected syntax */
+    background-size: cover;
+    background-position: center;
+    height: calc(210vh - 25vh); /* Adjust height to fit below navbar */
+}
+.main{
+    background-color:#CAE5D7;
+
+}
+.right{
+    margin-top: 20px;
+}
+.floatimg {
+    overflow: hidden;
+    padding: 20px;
+}
+
+.float-img {
+    float: right;
+    width: 300px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.right {
+    text-align: justify;
+    margin-top: 20px;
+    line-height: 1.6;
+}
+.left {
+    padding: 20px;
+    overflow: hidden;
+}
+
+.left {
+    padding: 20px;
+    overflow: hidden;
+}
+
+.left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.animated-img {
+    width: 300px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    margin: 0 auto;  /* Additional centering */
+}
+
+/* Combined subtle animations */
+.animated-img {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animated-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    filter: brightness(1.1);
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+
+/* Import Font Awesome for social icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+/* Main Footer Styles */
+.footermain {
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    font-family: 'Fjalla One', sans-serif;
+    text-transform: uppercase;
+    padding: 20px;
+    background-color: #000; /* Add your desired background color */
+}
+
+/* Column Styles */
+.column {
+    padding: 15px;
+}
+
+.logo-social {
+    width: 28%;
+}
+
+.about-company, .terms-feedback {
+    width: 18%;
+}
+
+/* Logo Styles */
+.footerlogo {
+    max-width: 150px;
+    height: auto;
+}
+
+/* Copyright Text */
+.copyright {
+    color: #6b7280;
+    padding: 8px;
+    text-transform: lowercase;
+}
+
+/* Social Icons Container */
+.footericons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Individual Social Icon */
+.social-icon {
+    padding: 12px;
+    background-color: #1a1a20;
+    border-radius: 9999px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #a3e635; /* lime-400 equivalent */
+}
+
+/* Footer Headings */
+.footerehead {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+/* Footer Lists */
+.footer-list {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-list li {
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 0.7em;
+}
+
+/* Contact Button */
+/* Contact Button with updated gradient */
+.contact-button {
+    padding: 8px 16px;
+    color: #1f2937;  /* Dark text for better contrast */
+    font-family: 'Fjalla One', sans-serif;
+    background: linear-gradient(to right, #CAE5D7, #97BFB0);  /* From mint green to a slightly darker shade */
+    /* Alternative gradient options:
+    background: linear-gradient(to right, #CAE5D7, #A5D6C5);  /* Lighter variation */
+    /* background: linear-gradient(to right, #E5F2ED, #CAE5D7);  /* Softer variation */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.contact-button:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .column {
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
+    
+    .footermain {
+        flex-direction: column;
+    }
+    
+    .footericons {
+        justify-content: center;
+    }
+}
+
+.pregnancy-care {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.main-heading {
+    color: #3F5E5A;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #CAE5D7;
+}
+
+.care-section {
+    margin-bottom: 25px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #CAE5D7;
+}
+
+.care-section h2 {
+    color: #3F5E5A;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+.care-section p {
+    color: #4a4a4a;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .pregnancy-care {
+        padding: 15px;
+    }
+    
+    .main-heading {
+        font-size: 1.7em;
+    }
+    
+    .care-section {
+        padding: 15px;
+    }
+    
+    .care-section h2 {
+        font-size: 1.2em;
+    }
+}

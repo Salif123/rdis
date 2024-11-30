@@ -1,0 +1,199 @@
+/* Main layout and background */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+                url('/static/images/medicine.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Page title */
+.page-title {
+    text-align: center;
+    color: #2c3e50;
+    padding: 20px 0;
+    margin: 0;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Container for medication cards */
+.med-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Individual medication card styling */
+.med-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(44, 62, 80, 0.1);
+}
+
+.med-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Medication name styling */
+.med-name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e8ebed;
+}
+
+/* Medication description styling */
+.med-description {
+    color: #505c68;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    min-height: 60px;
+}
+
+/* Stock control section */
+.stock-control {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #e8ebed;
+}
+
+/* Stock label */
+.stock-control label {
+    color: #2c3e50;
+    font-weight: 500;
+    min-width: 50px;
+}
+
+/* Stock input field */
+.stock-input {
+    width: 80px;
+    padding: 8px 12px;
+    border: 2px solid #e8ebed;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: border-color 0.3s ease;
+}
+
+.stock-input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+/* Update button */
+.update-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.update-btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.update-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .med-container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .page-title {
+        font-size: 2rem;
+        padding: 15px 0;
+    }
+
+    .med-card {
+        padding: 15px;
+    }
+
+    .med-name {
+        font-size: 1.2rem;
+    }
+}
+
+/* Success message styling */
+.success-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #2ecc71;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease-out;
+    z-index: 1000;
+}
+
+/* Error message styling */
+.error-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #e74c3c;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease-out;
+    z-index: 1000;
+}
+
+/* Animation for messages */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.back-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 8px 16px;
+    background-color: #4dcaff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+.back-btn:hover {
+    background-color: blue;
+}
+

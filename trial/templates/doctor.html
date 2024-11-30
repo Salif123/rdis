@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor's Appointment Page</title>
+    <link rel="stylesheet" href="/static/doctor.css">
+    <style>
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            padding-top: 60px; /* Location of the box */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Logout button in top-right corner -->
+    <div class="logout-container">
+        <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+    </div>
+
+    <div class="container">
+        <h1>Doctor's Appointment Dashboard</h1>
+
+        <!-- Pending Appointments Section -->
+        <h2>Pending Appointments</h2>
+        <div class="appointment-section">
+            {% if pending_appointments %}
+                <ul class="appointment-list">
+                    {% for appointment in pending_appointments %}
+                        <li class="appointment-item">
+                            <span><strong>Patient:</strong> {{ appointment.full_name }}</span>
+                            <span><strong>Contact:</strong> {{ appointment.contact_number }}</span>
+                            <span><strong>Status:</strong> {{ appointment.appointment_status }}</span>
+                            <div class="action-buttons">
+                                <button class="approve-btn" onclick="openModal({{ appointment.appointment_id }})">Approve</button>
+                                <form action="{{ url_for('reject_appointment', appointment_id=appointment.appointment_id) }}" method="POST">
+                                    <button type="submit" class="reject-btn">Reject</button>
+                                </form>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No pending appointments at the moment.</p>
+            {% endif %}
+        </div>
+
+        <hr>
+
+        <!-- Approved Appointments Section -->
+        <h2>Approved Appointments</h2>
+        <div class="appointment-section">
+            {% if approved_appointments %}
+                <ul class="appointment-list">
+                    {% for appointment in approved_appointments %}
+                        <li class="appointment-item">
+                            <span><strong>Patient:</strong> {{ appointment.full_name }}</span>
+                            <span><strong>Appointment Date:</strong> {{ appointment.appointment_date }}</span>
+                            <span><strong>Appointment Time:</strong> {{ appointment.appointment_time }}</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No approved appointments yet.</p>
+            {% endif %}
+        </div>
+        <hr>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Enter Appointment Time </h2>
+                <input type="time" id="appointmentTime" required>
+                <h2>Enter Appointment Date</h2>
+                <input type="date" id="appointmentDate" required>
+                <div>
+                <button id="confirmApprove" onclick="submitApproval()">Approve Appointment</button></div>
+            </div>
+        </div>
+    
+        <script>
+            let currentAppointmentId;
+    
+            function openModal(appointmentId) {
+                currentAppointmentId = appointmentId;
+                document.getElementById("myModal").style.display = "block";
+            }
+    
+            function closeModal() {
+                document.getElementById("myModal").style.display = "none";
+            }
+    
+            function submitApproval() {
+                const appointmentTime = document.getElementById("appointmentTime").value;
+                const appointmentDate = document.getElementById("appointmentDate").value;
+                if (appointmentTime && appointmentDate) {
+                    const formData = new FormData();
+                    formData.append('appointment_id', currentAppointmentId);
+                    formData.append('appointment_time', appointmentTime);
+                    formData.append('appointment_date', appointmentDate);
+    
+                    fetch('/approve_appointment', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            window.location.reload(); // Reload the page to see the updated appointments
+                        } else {
+                            alert('Error approving appointment. Please try again.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('Error approving appointment. Please try again.');
+                    });
+                    closeModal();
+                } else {
+                    alert('Please enter a valid appointment time.');
+                }
+            }
+    
+            // Close the modal when clicking outside of it
+            window.onclick = function(event) {
+                const modal = document.getElementById("myModal");
+                if (event.target == modal) {
+                    closeModal();
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>

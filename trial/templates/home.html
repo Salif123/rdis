@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="/static/home.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="center-text">rDIS</div>
+            <div class="logo"> 
+                <img src="/static/images/logo.png" alt="rDIS Logo"> <!-- Ensure the image path is correct -->
+            </div>
+            <div class="nav-links">
+                <a href="{{ url_for('patientlogin')}}">RCH</a>
+                <a href="{{ url_for('adminloginpage')}}">ADMIN</a>
+                <a href="{{ url_for('doctorloginpage')}}">DOCTOR</a>
+            </div>
+        </nav>
+        <hr class="styled-hr">
+        <div class="main">
+            
+           
+        
+        <hr class="styled-hr">
+        <div class="floatimg">
+                <div class="right">
+                    <img src="/static/images/3649296.webp" class="float-img" alt="RCH Care">
+                    <h2 style="color: #3F5E5A;">Reproductive and Child Health </h2>
+                    <br>
+                    Reproductive and Child Health (RCH) patients represent a crucial demographic in healthcare,
+                    encompassing women of reproductive age, pregnant mothers, newborns, and children under five years.
+                    These patients require comprehensive care that includes regular health check-ups, immunizations, nutritional support,
+                    and specialized medical attention during pregnancy and childbirth.
+                        The RCH program focuses on reducing maternal and infant mortality rates while ensuring the overall well-being
+                        of both mother and child through various stages of pregnancy,
+                    delivery, and early childhood development.
+                    <br>
+                    <br>
+                    The care of RCH patients extends beyond just medical treatment, incorporating vital aspects such as family planning services,
+                     prenatal and postnatal care, growth monitoring, and early childhood disease prevention.
+                      Healthcare providers work closely with these patients to address common health challenges,
+                       provide nutritional guidance, and ensure timely vaccinations.
+                        Special attention is also given to high-risk pregnancies, adolescent mothers,
+                         and children with developmental concerns,
+                          making RCH care a cornerstone of public health initiatives aimed at building a healthier future generation.
+                </div>
+                <div class="left">
+                    <a href="{{ url_for('patientlogin')}}"><img src="/static/images/RCH-Portal.jpg" class="animated-img" alt="RCH Portal"></a>
+                </div>
+
+                <div class="pregnancy-care">
+                    <h1 class="main-heading">Essential Care Guide for Expectant Mothers</h1>
+                 
+                    <div class="care-section">
+                        <h2>Prenatal Care and Health Monitoring</h2>
+                        <p>Regular prenatal check-ups are crucial during pregnancy. Schedule visits with your healthcare provider for monitoring blood pressure, weight, and baby's growth. Take prescribed prenatal vitamins, especially folic acid and iron supplements, to support healthy fetal development. Stay active with pregnancy-safe exercises and maintain a well-balanced diet rich in proteins, vitamins, and minerals.</p>
+                    </div>
+                 
+                    <div class="care-section">
+                        <h2>Nutrition and Dietary Guidelines</h2>
+                        <p>Focus on eating nutrient-rich foods including fresh fruits, vegetables, lean proteins, and whole grains. Stay hydrated by drinking plenty of water. Avoid raw or undercooked foods, unpasteurized dairy products, and excessive caffeine. Consider small, frequent meals to manage morning sickness and maintain energy levels throughout the day.</p>
+                    </div>
+                 
+                    <div class="care-section">
+                        <h2>Rest and Mental Wellbeing</h2>
+                        <p>Adequate rest is essential during pregnancy. Aim for 8 hours of sleep nightly and take short naps when needed. Practice stress-reduction techniques like gentle yoga or meditation. Stay connected with your support system and don't hesitate to discuss any concerns with your healthcare provider or mental health professional.</p>
+                    </div>
+                 </div>
+
+                
+        </div>
+    </div>
+    </header>
+    <footer>
+        <div class="footermain">
+            <div class="column logo-social">
+                <img class="footerlogo" src="/static/images/logo.png" alt="Medico">
+                <p class="copyright">© 2024 Sentinels. All rights reserved</p>
+                <div class="footericons">
+                    <div class="social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                    <div class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <div class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="column about-company">
+                <h1 class="footerehead">About us</h1>
+                <ul class="footer-list">
+                    <li>Who we are</li>
+                    <li>Partners</li>
+                    <li>Management Team</li>
+                </ul>
+            </div>
+            <div class="column about-company">
+                <h1 class="footerehead">Company</h1>
+                <ul class="footer-list">
+                    <li>Teams</li>
+                    <li>Creators</li>
+                    <li>RCH society</li>
+                    <li>News</li>
+                </ul>
+            </div>
+            <div class="column terms-feedback">
+                <h1 class="footerehead">Terms and policy</h1>
+                <ul class="footer-list">
+                    <li>Privacy</li>
+                    <li>Terms and conditions</li>
+                </ul>
+            </div>
+            <div class="column terms-feedback">
+                <h1 class="footerehead">Help and feedback</h1>
+                <button class="contact-button">
+                    contact us
+                </button>
+            </div>
+        </div>
+
+    </footer>
+</body>
+</html>

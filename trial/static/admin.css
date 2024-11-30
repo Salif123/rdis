@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa; /* Light cyan background */
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #00796b; /* Teal color */
+    margin-bottom: 20px;
+}
+
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    background-color: #ffffff; /* White background for the table */
+    border-radius: 8px; /* Rounded corners */
+}
+
+table, th, td {
+    border: 1px solid #4db6ac; /* Greenish-blue border */
+}
+
+th, td {
+    padding: 12px; /* Increased padding for better spacing */
+    text-align: center;
+}
+
+th {
+    background-color: #009688; /* Teal header background */
+    color: white; /* White text for headers */
+}
+
+td {
+    background-color: #e0f2f1; /* Light greenish-blue for table cells */
+}
+
+td[contenteditable="true"]:hover {
+    background-color: #b2dfdb; /* Slightly darker on hover */
+}
+
+button {
+    padding: 8px 12px;
+    cursor: pointer;
+    background-color: #00796b; /* Teal button background */
+    color: white; /* White text on button */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners for the button */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+button:hover {
+    background-color: #004d40; /* Darker teal on hover */
+}
+
+button:focus {
+    outline: none; /* Remove outline on focus */
+}
+
+.logout-btn {
+    position: fixed;
+    bottom: 20px; /* Distance from the bottom edge */
+    left: 50%;    /* Align horizontally with the center of the page */
+    transform: translateX(-50%); /* Adjust for the button's width */
+    padding: 10px 20px;
+    background-color: #ff4d4d;
+    color: white;
+    text-decoration: none; /* Remove underline from the link */
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it stays above other elements */
+    display: inline-block; /* Ensures padding and dimensions work correctly */
+    text-align: center;
+}
+
+.logout-btn:hover {
+    background-color: #ff1a1a;
+}
+
+.medico-btn {
+    position: fixed;
+    left: 50%; /* Center the button horizontally */
+    top: 50%; /* Optional: center the button vertically */
+    transform: translate(-50%, -50%); /* Adjust for both width and height */
+    padding: 10px 20px;
+    background-color: #4dcaff;
+    color: white;
+    text-decoration: none; /* Remove underline from the link */
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it stays above other elements */
+    display: inline-block; /* Ensures padding and dimensions work correctly */
+    text-align: center;
+}
+
+.medico-btn:hover {
+    background-color: blue;
+}
+
